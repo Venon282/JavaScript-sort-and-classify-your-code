@@ -60,6 +60,248 @@ You can easily adjust the rules for sorting and classifying the code by modifyin
   
 - **Changing Sorting Behavior:**
   - Adjust the `sort` and `keep_position` flags in the `blocks` dictionary to control how blocks are reordered.
+ 
+## Exemple 
+
+### From  
+```js
+import React from 'react'; 
+import Component1 from './Component1';
+import Component2 from './Component2';
+
+/*
+This is the VictoryList class that manages a list of items
+*/
+export class VictoryList {
+    constructor(items = []) {
+        this.items = items;
+    }
+    /*
+    This method adds a new item to the list
+    */
+    addVictory(item) {
+        this.items.push(item);
+        if (item === 3) {
+            return 2; // Special victory condition
+        } else if (item === 5) {
+            return 9; // Another special victory condition
+        }
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i); // Victory parade
+        }
+    }
+
+    /*
+    This method returns the total number of victories
+    */
+    getTotalVictories() {
+        return this.items.length;
+    }
+
+    /*
+    This method removes the last victory from the list
+    */
+    removeLastVictory() {
+        return this.items.pop();
+    }
+}
+
+/*
+This is the ChampionCalculator class that performs calculations
+*/
+export class ChampionCalculator {
+    constructor(number) {
+        this.number = number;
+    }
+
+    /*
+    This method checks if the number is a champion (even)
+    */
+    isChampion() {
+        return this.number % 2 === 0;
+    }
+
+    /*
+    This method multiplies the number by a victory factor
+    */
+    multiplyByFactor(factor) {
+        return this.number * factor;
+    }
+
+    /*
+    This method adds a victory value to the number
+    */
+    addVictoryPoints(value) {
+        return this.number + value;
+    }
+}
+
+/*
+This is the Hero class that handles basic operations
+*/
+
+class Hero {
+    constructor(name) {
+        this.name = name;
+    }
+
+    /*
+    This method logs a heroic greeting message
+    */
+    greetHero() {
+        console.log(`Greetings, Hero ${this.name}!`);
+    }
+
+    /*
+    This method returns the length of the hero's name
+    */
+    getHeroNameLength() {
+        return this.name.length;
+    }
+
+    /*
+    This method converts the hero's name to uppercase
+    */
+    makeHeroNameUppercase() {
+        return this.name.toUpperCase();
+    }
+}
+
+export default Hero;
+```
+
+### To
+
+```js
+import React from 'react'; 
+import Component1 from './Component1';
+import Component2 from './Component2';
+
+/*ELEMENTS NAME SUMMARY
+- [class] ChampionCalculator
+   - [methods] constructor
+   - [methods] addVictoryPoints
+   - [methods] isChampion
+   - [methods] multiplyByFactor
+- [class] Hero
+   - [methods] constructor
+   - [methods] getHeroNameLength
+   - [methods] greetHero
+   - [methods] makeHeroNameUppercase
+- [class] VictoryList
+   - [methods] constructor
+   - [methods] addVictory
+   - [methods] getTotalVictories
+   - [methods] removeLastVictory
+*/
+
+
+/*
+This is the ChampionCalculator class that performs calculations
+*/
+export class ChampionCalculator {
+    constructor(number) {
+        this.number = number;
+    }
+
+    /*
+    This method adds a victory value to the number
+    */
+    addVictoryPoints(value) {
+        return this.number + value;
+    }
+
+    /*
+    This method checks if the number is a champion (even)
+    */
+    isChampion() {
+        return this.number % 2 === 0;
+    }
+
+    /*
+    This method multiplies the number by a victory factor
+    */
+    multiplyByFactor(factor) {
+        return this.number * factor;
+    }
+
+}
+
+/*
+This is the Hero class that handles basic operations
+*/
+
+class Hero {
+    constructor(name) {
+        this.name = name;
+    }
+
+    /*
+    This method returns the length of the hero's name
+    */
+    getHeroNameLength() {
+        return this.name.length;
+    }
+
+    /*
+    This method logs a heroic greeting message
+    */
+    greetHero() {
+        console.log(`Greetings, Hero ${this.name}!`);
+    }
+
+    /*
+    This method converts the hero's name to uppercase
+    */
+    makeHeroNameUppercase() {
+        return this.name.toUpperCase();
+    }
+
+}
+
+/*
+This is the VictoryList class that manages a list of items
+*/
+export class VictoryList {
+    constructor(items = []) {
+        this.items = items;
+    }
+
+    /*
+    This method adds a new item to the list
+    */
+    addVictory(item) {
+        this.items.push(item);
+        if (item === 3) {
+            return 2; // Special victory condition
+        } else if (item === 5) {
+            return 9; // Another special victory condition
+        }
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i); // Victory parade
+        }
+    }
+
+    /*
+    This method returns the total number of victories
+    */
+    getTotalVictories() {
+        return this.items.length;
+    }
+
+    /*
+    This method removes the last victory from the list
+    */
+    removeLastVictory() {
+        return this.items.pop();
+    }
+
+}
+
+export default Hero;
+```
 
 ## Contribution
 
@@ -68,11 +310,3 @@ If you want to contribute to the development of this program, feel free to submi
 ## License
 
 This project is open-source and available under the MIT License. 
-
-## Contact
-
-For any questions or issues, please contact [Your Name] at [Your Email].
-
----
-
-This README file provides an overview of the program's functionality, usage instructions, and details on how to customize the code sorting and classification behavior.
